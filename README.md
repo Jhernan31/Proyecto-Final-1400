@@ -1,36 +1,34 @@
-# Proyecto-Final-1400
+Proyecto-Final-1400
 Widget Flotante Pomodoro
 
-# Desarrollo del Diseño
+Desarrollo del Diseño
 
-# Proyecto: Widget Flotante Pomodoro
-
+Proyecto: Widget Flotante Pomodoro
 El programa consiste en un widget flotante que ayuda al usuario a organizar sus tareas usando la técnica Pomodoro. El sistema permite:
 
-# agregar tareas,
-# asignar prioridades,
-# seleccionar una tarea,
-# ingresar un tiempo de enfoque,
-# iniciar un temporizador,
-# pausar, reiniciar, completar o eliminar tareas,
-# y repetir sesiones de trabajo.
+agregar tareas,
+asignar prioridades,
+seleccionar una tarea,
+ingresar un tiempo de enfoque,
+iniciar un temporizador,
+pausar, reiniciar, completar o eliminar tareas,
+y repetir sesiones de trabajo.
 
-# El diseño lógico del programa incluye:
+El diseño lógico del programa incluye:
 
-# Condicional 1: verificar si el usuario desea agregar una tarea.
-# Condicional 2: verificar si la prioridad fue seleccionada correctamente.
-# Condicional 3: verificar si el tiempo ingresado es válido.
-# Condicional 4: verificar si el tiempo terminó.
-# Bucle: mientras el tiempo restante sea mayor que cero, el temporizador sigue contando hacia atrás.
+Condicional 1: verificar si el usuario desea agregar una tarea.
+Condicional 2: verificar si la prioridad fue seleccionada correctamente.
+Condicional 3: verificar si el tiempo ingresado es válido.
+ondicional 4: verificar si el tiempo terminó.
+Bucle: mientras el tiempo restante sea mayor que cero, el temporizador sigue contando hacia atrás
 
-
-# Explicación del Flowchart
+Explicación del Flowchart
 
 El flujo del programa comienza con la inicialización del sistema y la creación de variables principales, como la lista de tareas y el temporizador.
 
 Después, el widget flotante se muestra en pantalla con los botones de acción. El sistema queda esperando una acción del usuario.
 
-# Rutas principales del flujo:
+Rutas principales del flujo:
 
 1. Agregar tarea
 
