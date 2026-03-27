@@ -1,7 +1,7 @@
-# Proyecto-Final-1400
-# Widget Flotante Pomodoro
+Proyecto-Final-1400
+Widget Flotante Pomodoro
 
-# Descripción del Proyecto
+Descripción del Proyecto
     El Widget Flotante Pomodoro es una aplicación desarrollada en Python utilizando Tkinter.
     Permite gestionar tareas y controlar sesiones de enfoque mediante la técnica Pomodoro.
 
@@ -13,19 +13,19 @@
         - Mensajes dentro del widget
         - Interfaz flotante siempre visible
 
-# Integrantes
+Integrantes
     - Thais Medina
     - Pedro Ibanez
     - Jesús Hernan (c)
 
-# Estructura del Programa
+Estructura del Programa
     Proyecto/
         main.py              -    lógica principal
         tareas.json         -    almacenamiento (no implementado completamente)
         pomodoroApp.py  - interfaz gráfica
         README.md
 
-# Funcionamiento del Sistema
+Funcionamiento del Sistema
     Inicio
         Crear ventana con Tkinter
         Configurar widget flotante (always on top)
@@ -64,7 +64,7 @@
 
     Fin
 
-# Pseudocódigo
+Pseudocódigo
     INICIO
 
         Crear lista de tareas
@@ -142,7 +142,7 @@
 
     FIN
 
-# Conceptos Aplicados
+Conceptos Aplicados
     - Condicionales (if / else)
     - Eventos de interfaz (botones)
     - Temporizador con after()
@@ -150,7 +150,7 @@
     - Programación orientada a objetos
     - Validación de datos del usuario
 
-# Decisiones Técnicas
+Decisiones Técnicas
     1. Uso de after() en lugar de while
         Evita que la interfaz se congele
 
@@ -158,25 +158,20 @@
         Pomodoro -> datos
         PomodoroApp -> interfaz y control
 
-    3. Estados del sistema
-        - en_cuenta (trabajando)
-        - en_descanso
-        - detenido
-
-    4. Interfaz dinámica
+    3. Interfaz dinámica
         Se ocultan y muestran controles según el estado
 
-    5. Colores por prioridad
+    4. Colores por prioridad
         Alta -> rojo
         Media -> naranja
         Baja -> verde
         Completada -> gris
 
-# Requisitos
+Requisitos
     - Python 3.x
     - Tkinter (incluido por defecto)
 
-# Conclusión
+Conclusión
     Este proyecto implementa una aplicación funcional que integra
     interfaz gráfica, control de flujo y manejo de eventos.
 
