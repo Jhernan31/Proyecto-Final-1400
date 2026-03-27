@@ -1,161 +1,185 @@
-Widget Flotante Pomodoro
-Descripción del Proyecto
+# Proyecto-Final-1400
+# Widget Flotante Pomodoro
 
-El Widget Flotante Pomodoro es una aplicación desarrollada en Python con Tkinter que permite al usuario organizar tareas y gestionar sesiones de enfoque utilizando la técnica Pomodoro.
+# Descripción del Proyecto
+    El Widget Flotante Pomodoro es una aplicación desarrollada en Python utilizando Tkinter.
+    Permite gestionar tareas y controlar sesiones de enfoque mediante la técnica Pomodoro.
 
-El sistema incluye:
-Gestión de tareas
-Asignación de prioridades
-Temporizador con cuenta regresiva
-Control del tiempo (pausar, reiniciar)
-Marcado y eliminación de tareas
-Mensajes motivacionales al finalizar
+    El sistema integra:
+        - Gestión de tareas (agregar, eliminar, completar)
+        - Prioridades (Alta, Media, Baja)
+        - Temporizador con cuenta regresiva
+        - Periodos de descanso automáticos
+        - Mensajes dentro del widget
+        - Interfaz flotante siempre visible
 
-Presentación del Proyecto
- Parte 1 – Thais Medina
+# Integrantes
+    - Thais Medina
+    - Pedro Ibanez
+    - Jesús Hernan (c)
 
-Diseño del Sistema y Experiencia del Usuario
-El sistema fue diseñado para ser intuitivo y fácil de usar, permitiendo al usuario interactuar mediante botones y entradas simples.
+# Estructura del Programa
+    Proyecto/
+        main.py              -    lógica principal
+        tareas.json         -    almacenamiento (no implementado completamente)
+        pomodoroApp.py  - interfaz gráfica
+        README.md
 
-Funcionalidades implementadas:
-#Gestión de tareas
-#Agregar tareas mediante un campo de texto
-#Seleccionar prioridad (Alta, Media, Baja)
-#Visualización en lista
-#Prioridades por color
-Alta → rojo
-Media → naranja
-Baja → verde
-Esto permite identificar rápidamente la importancia de cada tarea.
+# Funcionamiento del Sistema
+    Inicio
+        Crear ventana con Tkinter
+        Configurar widget flotante (always on top)
+        Mostrar interfaz
 
-Parte 2 – Pedro
-Lógica del Sistema y Estructura
-El programa utiliza estructuras de datos y control de flujo para manejar el comportamiento del sistema.
-#Estructuras utilizadas:
-#Lista de tareas (tareas)
-#Diccionarios para almacenar nombre, prioridad y estado
+    Usuario puede:
+        - Agregar tarea
+        - Seleccionar tarea
+        - Eliminar tarea
+        - Iniciar temporizador
+        - Pausar
+        - Completar tarea
 
-#Condicionales implementados:
-Validación de tarea vacía
-Validación de prioridad
-Validación de tiempo ingresado
-Verificación de finalización del temporizador
-#Bucle del temporizador:
-Se implementa mediante after() de Tkinter, simulando:
-while tiempo_restante > 0:
-Esto permite actualizar la interfaz sin bloquear el programa.
+    Si el usuario inicia:
+        Verificar que haya tarea seleccionada
+        Verificar que el tiempo sea válido
 
-Parte 3 – Jesús
-Funcionalidad Avanzada y Control del Sistema
-#Temporizador
-#Inicia con minutos ingresados
-#Convierte a segundos
-#Realiza cuenta regresiva
-#Controles del temporizador
-Pausar → detiene el contador
-Reiniciar → vuelve a 00:00
+        Si es válido:
+            Convertir minutos a segundos
+            Iniciar temporizador
 
-#Gestión de tareas
-Completar tarea → cambia estado y color
-Eliminar tarea → la remueve de la lista
-Mensaje motivacional
+    Mientras tiempo > 0:
+        Actualizar cronómetro cada segundo usando after()
 
-Al finalizar el tiempo, el sistema muestra:
+    Cuando tiempo termina:
+        Mostrar mensaje dentro del widget
+        Esperar acción del usuario
 
-“¡Tiempo terminado! Excelente trabajo. Te has ganado una recompensa 
+    Si tarea se completa:
+        Marcar como completada
+        Iniciar descanso automático
 
-Esto mejora la experiencia del usuario.
+    Durante descanso:
+        Ejecutar temporizador de descanso
+        Mostrar mensaje correspondiente
 
-TODOS - Flujo del Programa 
+    Fin
 
-1. Inicialización
-Se crean variables:lista de tareas, temporizador, estado del sistema
+# Pseudocódigo
+    INICIO
 
-2. Interfaz
-Se muestra ventana flotante, Usuario interactúa con botones
+        Crear lista de tareas
 
-3. Rutas principales
-Agregar tarea
-Usuario escribe tarea
-Selecciona prioridad
-Sistema valida datos
-Se asigna color
-Se guarda en la lista
+        Crear interfaz gráfica
 
-Iniciar temporizador
-Seleccionar tarea
+        MIENTRAS programa activo
 
-Ingresar tiempo
-Validar tiempo
-Iniciar cuenta regresiva
-Mientras el tiempo > 0:
-Mostrar tiempo
+            SI usuario presiona "Agregar"
+                Leer nombre
+                Leer tiempo
+                Leer prioridad
 
-Esperar 1 segundo
-Reducir contador
+                SI datos válidos
+                    Crear tarea
+                    Guardar en lista
+                    Actualizar interfaz
+                SINO
+                    Mostrar error
+                FIN SI
+            FIN SI
 
-Al finalizar:
+            SI usuario selecciona tarea
+                Guardar índice seleccionado
+            FIN SI
 
-Mostrar mensaje
-Permitir completar tarea
+            SI usuario presiona "Eliminar"
+                Verificar selección
+                Eliminar tarea de lista
+                Actualizar interfaz
+            FIN SI
 
-Nueva sesión
-Usuario puede repetir el proceso
+            SI usuario presiona "Comenzar"
 
-O salir del sistema
+                SI ya está corriendo
+                    Mostrar mensaje
+                SINO
 
-Pseudocódigo (Adaptado a implementación)
-INICIO
+                    SI hay tarea seleccionada
 
-Crear lista tareas
-Crear temporizador
+                        SI tiempo válido
 
-MIENTRAS aplicación activa
+                            tiempo_restante = tiempo * 60
 
-    SI usuario agrega tarea
-        validar datos
-        guardar tarea
+                            MIENTRAS tiempo_restante > 0
+                                Mostrar tiempo
+                                Esperar 1 segundo (after)
+                                tiempo_restante = tiempo_restante - 1
+                            FIN MIENTRAS
 
-    SI usuario inicia temporizador
-        validar tiempo
-        iniciar cuenta regresiva
+                            Mostrar mensaje "Tiempo terminado"
 
-    SI usuario pausa
-        detener temporizador
+                        SINO
+                            Mostrar error
+                        FIN SI
 
-    SI usuario reinicia
-        resetear tiempo
+                    SINO
+                        Mostrar mensaje "Selecciona tarea"
+                    FIN SI
 
-    SI usuario completa tarea
-        marcar como completada
+                FIN SI
 
-    SI usuario elimina tarea
-        borrar tarea
+            FIN SI
 
-FIN
+            SI usuario presiona "Pausar"
+                Detener temporizador
+            FIN SI
 
-Mostrar mensaje final
+            SI usuario presiona "Completar"
+                Marcar tarea como completada
+                Iniciar descanso
+            FIN SI
 
-FIN
+        FIN MIENTRAS
 
-Tecnologías utilizadas
-Python 3
-Tkinter
+    FIN
 
-Estructura del proyecto
-proyecto-final-1400/
-main.
-pomodor_widget.py
-README.md
-imagen_diagrama_de_flujo
+# Conceptos Aplicados
+    - Condicionales (if / else)
+    - Eventos de interfaz (botones)
+    - Temporizador con after()
+    - Manejo de listas y diccionarios
+    - Programación orientada a objetos
+    - Validación de datos del usuario
 
-Autores
-Thais Medina,
-Pedro Ibanez y 
-Jesús Hernan
+# Decisiones Técnicas
+    1. Uso de after() en lugar de while
+        Evita que la interfaz se congele
 
-Conclusión
+    2. Separación por clases
+        Pomodoro -> datos
+        PomodoroApp -> interfaz y control
 
-Este proyecto demuestra la implementación completa de un sistema interactivo basado en la técnica Pomodoro, integrando diseño lógico (flowchart), pseudocódigo y desarrollo en Python.
+    3. Estados del sistema
+        - en_cuenta (trabajando)
+        - en_descanso
+        - detenido
 
-El resultado es una aplicación funcional que combina organización, control del tiempo y experiencia de usuario
+    4. Interfaz dinámica
+        Se ocultan y muestran controles según el estado
+
+    5. Colores por prioridad
+        Alta -> rojo
+        Media -> naranja
+        Baja -> verde
+        Completada -> gris
+
+# Requisitos
+    - Python 3.x
+    - Tkinter (incluido por defecto)
+
+# Conclusión
+    Este proyecto implementa una aplicación funcional que integra
+    interfaz gráfica, control de flujo y manejo de eventos.
+
+    Demuestra la aplicación práctica de los conceptos aprendidos en clase
+    y representa una solución real para la gestión del tiempo y tareas.
+
