@@ -291,7 +291,8 @@ class PomodoroApp:
         self.pomodoro.tareas.pop(indice)
         self.mostrar_tareas()
         self.mensaje.config(text="")
-
+        
+    #BLOQUE 3: TEMPORIZADOR
     def iniciar(self):
         if self.en_cuenta:
             self.mensaje.config(text="El temporizador ya está corriendo.")
