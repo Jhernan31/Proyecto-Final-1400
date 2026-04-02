@@ -163,7 +163,8 @@ class PomodoroApp:
             command=self.salir
         )
         self.boton_salir.pack(pady=2)
-
+        
+    #BLOQUE 2: CONTROL DEL TEMPORIZADOR
     def ocultar_controles(self):
         self.titulo.pack_forget()
         self.label_nombre.pack_forget()
