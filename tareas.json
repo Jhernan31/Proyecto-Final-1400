@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Estudiar Python",
+        "tiempo": 25,
+        "prioridad": "Alta",
+        "completada": false
+    },
+    {
+        "nombre": "Leer libro",
+        "tiempo": 15,
+        "prioridad": "Media",
+        "completada": true
+    },
+    {
+        "nombre": "Ejercicio",
+        "tiempo": 30,
+        "prioridad": "Baja",
+        "completada": false
+    }
+]
