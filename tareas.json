@@ -1,19 +1,19 @@
 [
     {
-        "nombre": "Estudiar Python",
+        "nombre": "caminar",
+        "tiempo": 1,
+        "prioridad": "Media",
+        "completada": true
+    },
+    {
+        "nombre": "estudiar Python",
         "tiempo": 25,
         "prioridad": "Alta",
         "completada": false
     },
     {
-        "nombre": "Leer libro",
+        "nombre": "leer",
         "tiempo": 15,
-        "prioridad": "Media",
-        "completada": true
-    },
-    {
-        "nombre": "Ejercicio",
-        "tiempo": 30,
         "prioridad": "Baja",
         "completada": false
     }
